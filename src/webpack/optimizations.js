@@ -26,16 +26,18 @@ module.exports = ({ isProd }) => {
 				chunks: 'all',
 				maxInitialRequests: Infinity,
 				cacheGroups: {
-					vendor: {
-						test: /[\\/]node_modules[\\/](!@carvana)[\\/]/,
-						name: 'vendors',
-						...chunksGroupOptions
-					},
-					common: {
-						test: /[\\/]node_modules[\\/](@carvana)[\\/]/,
-						name: 'common',
-						...chunksGroupOptions
-					}
+					vendor: Object.assign({}, {
+							test: /[\\/]node_modules[\\/]/,
+							name: 'vendors',
+						},
+						chunksGroupOptions
+					),
+					common: Object.assign({}, {
+							test: /[\\/]node_modules[\\/]/,
+							name: 'common',
+						}, 
+						chunksGroupOptions
+					)
 				}
 			}
 		};

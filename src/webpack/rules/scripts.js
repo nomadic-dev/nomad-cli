@@ -5,7 +5,7 @@ module.exports = ({ isProd, rootDir }) => {
 	return [
 		{
 			test: /^(?!.*\.test\.(j|t)sx?$).*\.m?(j|t)sx?$/,
-			exclude: /node_modules\/(?!(@carvana)\/).*/,
+			exclude: /node_modules\/.*/,
 			use: [
 				{
 					loader: 'babel-loader',

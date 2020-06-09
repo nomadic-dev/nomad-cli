@@ -31,16 +31,13 @@ module.exports = {
 	setupFilesAfterEnv: [ setupTest, jestTestLib ],
   testEnvironment: 'jsdom',
   testURL: 'http://localhost',
-	globals: {
-		...envConfig,
-	},
+	globals: Object.assign({}, envConfig),
   transform: {
 		'^.+\\.(js|jsx|ts|tsx|mjs)$': [ babelJest, { configFile: path.resolve(CLI_ROOT, 'lib/babel') }],
 		'^.+\\.(css|less)$': cssTransform,
 		'^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': fileTransform
   },
   transformIgnorePatterns: [
-    '[/\\\\]node_modules[/\\\\](?!(@carvana[/\\\\])).+\\.(js|jsx|mjs)$',
     '^.+\\.module\\.(css|sass|scss)$'
   ],
   collectCoverage: false,

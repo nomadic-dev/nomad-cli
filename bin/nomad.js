@@ -55,8 +55,7 @@ const execCommand = (cmd) => {
 
 	const options = {
 		cwd: process.cwd(),
-		env: {
-			...process.env,
+		env: Object.assign({}, process.env, {
       NODE_ENV: isLocal ? 'development' : 'production',
       ENVIRONMENT: OPTS.environment,
 			LOCAL: isLocal,
@@ -64,7 +63,7 @@ const execCommand = (cmd) => {
 			ANALYZE: OPTS.analyze,
 			CLI_ROOT,
 			PROJ_ROOT,
-		},
+		}),
 		stdio: 'inherit'
 	};
 
@@ -152,7 +151,7 @@ const installEslint = () => {
 	 *
 	 * add .eslintrc.js file with
 	 *  {
-	 *		extends: './node_modules/@carvana/webcli/eslint-config.js'
+	 *		extends: '@nomadic-dev/eslint-config.js'
 	 *	}
 	 */
 };

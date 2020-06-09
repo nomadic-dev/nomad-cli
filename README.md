@@ -1,44 +1,44 @@
-# @carvana/webcli
+# @nomadic-dev/nomad-cli
 Command line util that packages webpack, typescript, babel, eslint, support together for cleaner easier setups
 
 ## Usage
-The development environment use @carvana/webcli for development, building, and testing.   
+The development environment use @nomadic-dev/nomad-cli for development, building, and testing.   
 All commands must be ran from the root folder of the project.   
-@carvana/webcli will pass cli arguments to the resulting commands if they are provided.
+@nomadic-dev/nomad-cli will pass cli arguments to the resulting commands if they are provided.
 
 For example:   
 `webpack-dev-server` supports passing the port number as follows.   
-As a result `carvana server` also supports this because it passes the arguments downstream.   
-Calling `carvana server --port 3500` would result in overriding the default port with localhost:3500.
+As a result `nomad server` also supports this because it passes the arguments downstream.   
+Calling `nomad server --port 3500` would result in overriding the default port with localhost:3500.
 
 ### Running the Dev server
 The development server with Hot Realod will run at http://localhost:3000. This command uses `webpack-dev-server`.
 ```
-carvana serve(r)
+nomad serve(r)
 ```
 
 ### Build deployable projects
 Buld the project. Outputs `./build`. This command uses `webpack-cli`
 ```
-carvana build -e [ production | development | test | uat ]
+nomad build -e [ production | development | test | uat ]
 ```
 
 ### Testing
 Run unit tests. This command uses `jest`
 ```
-carvana test
+nomad test
 ```
 Run unit test coverage. Outputs `./coverage`. This command uses `jest`
 ```
-carvana test --coverage
+nomad test --coverage
 ```
 Run linters. This command use `eslint`
 ```
-carvana lint
+nomad lint
 ```
 Run Typescript type checks. This command uses `typescript`
 ```
-carvana typecheck
+nomad typecheck
 ```
 
 ## Additional Resources
