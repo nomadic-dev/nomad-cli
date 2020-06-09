@@ -85,7 +85,7 @@ const execCommand = (cmd) => {
 
 const runServer = () => {
 	const devServerPath = path.join(CLI_ROOT, 'node_modules/webpack-dev-server/bin/webpack-dev-server.js');
-	const webpackConfigPath = path.join(CLI_ROOT, 'lib/webpack/index.js');
+	const webpackConfigPath = path.join(CLI_ROOT, 'src/webpack/index.js');
 
 	return execCommand(`node ${devServerPath} --config ${webpackConfigPath}`);
 };
@@ -119,7 +119,7 @@ const runSonarLint = () => {
 
 const runTests = () => {
 	const jestPath = path.join(CLI_ROOT, 'node_modules/jest/bin/jest.js');
-	const jestConfigPath = path.join(CLI_ROOT, 'lib/jest/jest.config.js');
+	const jestConfigPath = path.join(CLI_ROOT, 'src/jest/jest.config.js');
 	OPTS.environment = 'jest';
 	OPTS.jest = true;
 
@@ -128,7 +128,7 @@ const runTests = () => {
 
 const runTestCoverage = () => {
 	const jestPath = path.join(CLI_ROOT, 'node_modules/jest/bin/jest.js');
-	const jestConfigPath = path.join(CLI_ROOT, 'lib/jest/jest.config.js');
+	const jestConfigPath = path.join(CLI_ROOT, 'src/jest/jest.config.js');
 	OPTS.environment = 'jest';
 	OPTS.jest = true;
 
@@ -137,7 +137,7 @@ const runTestCoverage = () => {
 
 const runBuild = () => {
 	const webpackPath = path.join(CLI_ROOT, 'node_modules/webpack/bin/webpack.js');
-	const webpackConfigPath = path.join(CLI_ROOT, 'lib/webpack/index.js');
+	const webpackConfigPath = path.join(CLI_ROOT, 'src/webpack/index.js');
 
 	return execCommand(`node ${webpackPath} --config ${webpackConfigPath}`);
 };

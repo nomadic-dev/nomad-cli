@@ -1,12 +1,12 @@
 {
-  "name": "@carvana/webcli",
+  "name": "@nomadic-dev/nomad-cli",
   "version": "1.0.0",
   "description": "Webpack/typescript cli tool",
-  "author": "Sean Stephens <sean.stephens@carvana.com>",
+  "author": "Sean Stephens <seanstephens29@gmail.com>",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "bin": {
-    "carvana": "./bin/carvana.js"
+    "nomad": "./bin/nomad.js"
   },
   "main": "index.js",
 	"scripts": {
