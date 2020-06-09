@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "lib": ["es2015", "dom"],
+    "strict": true,
+    "jsx": "react",
+    "target": "es5",
+    "module": "commonjs",
+    "checkJs": false,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+		"resolveJsonModule": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": false,
+    "noEmit": true,
+    "declarationMap": true,
+    "declaration": true,
+    "skipLibCheck": true,
+    "paths": {
+			"app/*": [ "src/*" ]
+		}
+  },
+  "typeAcquisition": {
+    "include": [ "./node_modules/jest" ]
+  }
+}
